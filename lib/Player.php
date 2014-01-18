@@ -8,10 +8,11 @@ class Player extends Highscores
 {
 	protected $displayName;
 
-	public function __construct($username)
+	public function __construct($displayName)
 	{
-		$this->displayName = $username;
-
+		$this->displayName = $displayName;
+		// Call the parent constructor after have a display name set
+		parent::__construct();
 	}
 
 	/**
