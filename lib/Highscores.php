@@ -27,6 +27,14 @@ abstract class Highscores
 			"Dungeoneering", "Divination"
 			);
 
+		$this->minigameLabels = array(
+			"Duel Tournaments", "Bounty Hunters",
+			"Bounty Hunter Rogues", "Fist of Guthix",
+			"Mobilising Armies", "B.A Attackers",
+			"B.A Defenders", "B.A Healers",
+			"Castle Wars Games", "Conquest"
+			);
+
 		$this->parseHighscoreCSV($this->getHighscoresString());
 	}
 
@@ -53,8 +61,11 @@ abstract class Highscores
 		// Empty array to push the skills to
 		$this->skills = array();
 
+		$numberOfSkillLabels = count($this->skillLabels);
+		$numberOfMinigameLabels = count($this->minigameLabels);
+
 		// Loop over the skills and push them into an array
-		for($i = 0; $i < count($this->skillLabels); $i++) {
+		for($i = 0; $i < $numberOfSkillLabels; $i++) {
 			$currentSkill = $this->skillLabels[$i];
 
 			$skillData = explode(",", $highscoreStats[$i]);
@@ -66,6 +77,10 @@ abstract class Highscores
 			}
 
 			$this->skills[$currentSkill] = $skillData;
+		}
+
+		// Loop over the minigames and process them - In progress
+		for ($z = $numberOfSkillLabels; $z < $numberOfMinigameLabels + $numberOfSkillLabels; $z++) {
 		}
 	}
 
