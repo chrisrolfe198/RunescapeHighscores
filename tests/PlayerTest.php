@@ -23,4 +23,11 @@ class PlayerTest extends PHPUnit_Framework_TestCase
 
 		$this->assertEquals($playerName, $this->displayName);
 	}
+
+	public function testGetSkill()
+	{
+		$attackLevel = $this->player->getSkill('attack', 'level');
+
+		$this->assertEquals($attackLevel, '97');
+	}
 }
