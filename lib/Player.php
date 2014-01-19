@@ -23,22 +23,25 @@ class Player extends Highscores
 		return $this->displayName;
 	}
 
-	public function getSkill($skill, $type)
+	public function getSkill($skill, $typeOfStatistic)
 	{
 		$skill = $this->formatSkillString($skill);
 
 		// Check if the skill is in the array
 		if (array_key_exists($skill, $this->skills)) {
-			return $this->skills[$skill][$type];
+			return $this->skills[$skill][$typeOfStatistic];
 		} else {
 			return false;
 		}
 	}
 
-	// Formats the string to match what is expected, a lower case word with the first letter uppercase
+	/**
+	 * Helper Function
+	 * Formats the string into lower case with an uppercase letter
+	 */
 	private function formatSkillString($skill)
 	{
-		return ucfirst(strtolower($skill));
+		return ucwords(strtolower($skill));
 	}
 
 }
