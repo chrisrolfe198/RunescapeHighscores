@@ -49,4 +49,11 @@ class PlayerTest extends PHPUnit_Framework_TestCase
 
 		$this->assertEquals($attackXp, '10784313');
 	}
+
+	public function testGetMinigameRank()
+	{
+		$baAttackersRank = $this->player->getMinigame('ba attackers', 'rank');
+
+		$this->assertEquals($baAttackersRank, '10201');
+	}
 }

@@ -30,8 +30,8 @@ abstract class Highscores
 		$this->minigameLabels = array(
 			"Duel Tournaments", "Bounty Hunters",
 			"Bounty Hunter Rogues", "Fist of Guthix",
-			"Mobilising Armies", "B.A Attackers",
-			"B.A Defenders", "B.A Healers",
+			"Mobilising Armies", "Ba Attackers",
+			"Ba Defenders", "Ba Healers",
 			"Castle Wars Games", "Conquest"
 			);
 
