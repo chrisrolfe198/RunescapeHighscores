@@ -93,8 +93,6 @@ abstract class Highscores
 			$this->minigames[$currentMinigame] = $minigameData;
 			$w++;
 		}
-
-		var_dump($this->minigames);
 	}
 
 }
