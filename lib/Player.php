@@ -39,9 +39,9 @@ class Player extends Highscores
 	 * Helper Function
 	 * Formats the string into lower case with an uppercase letter
 	 */
-	private function formatHighscoreString($skill)
+	private function formatHighscoreString($highscore)
 	{
-		return ucwords(strtolower($skill));
+		return ucwords(strtolower($highscore));
 	}
 
 }
