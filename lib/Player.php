@@ -25,7 +25,7 @@ class Player extends Highscores
 
 	public function getSkill($skill, $typeOfStatistic)
 	{
-		$skill = $this->formatSkillString($skill);
+		$skill = $this->formatHighscoreString($skill);
 
 		// Check if the skill is in the array
 		if (array_key_exists($skill, $this->skills)) {
@@ -39,7 +39,7 @@ class Player extends Highscores
 	 * Helper Function
 	 * Formats the string into lower case with an uppercase letter
 	 */
-	private function formatSkillString($skill)
+	private function formatHighscoreString($skill)
 	{
 		return ucwords(strtolower($skill));
 	}
