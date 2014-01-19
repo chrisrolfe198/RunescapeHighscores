@@ -35,6 +35,17 @@ class Player extends Highscores
 		}
 	}
 
+	public function getMinigame($minigame, $typeOfStatistic)
+	{
+		$minigame = $this->formatHighscoreString($minigame);
+
+		if (array_key_exists($minigame, $this->minigames)) {
+			return $this->minigames[$minigame][$typeOfStatistic];
+		} else {
+			return false;
+		}
+	}
+
 	/**
 	 * Helper Function
 	 * Formats the string into lower case with an uppercase letter
