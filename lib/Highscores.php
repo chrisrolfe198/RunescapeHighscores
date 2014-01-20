@@ -44,13 +44,11 @@ abstract class Highscores
 	 */
 	protected function getHighscoresString()
 	{
-		// if ($highscoresString = fopen('http://hiscore.runescape.com/index_lite.ws?player='.$this->displayName, 'r')) {
-		// 	return stream_get_contents($highscoresString);
-		// } else {
-		// 	return false;
-		// }
-
-		return "40158,2400,217195145\n99277,97,10784313\n92935,98,12086378\n114188,97,11154627\n88425,99,14639079\n112322,90,5559045\n68455,95,9490210\n116703,96,10009458\n108288,97,11326972\n91026,97,11283768\n84534,97,10728241\n68926,93,7693481\n86582,97,11321847\n59558,89,4849832\n69041,86,3831864\n36209,97,10881162\n75248,93,7570825\n45786,89,5072388\n55220,86,3948339\n35162,99,13038727\n53607,88,4583904\n48002,92,7139246\n57583,85,3520602\n39893,91,6223827\n61853,91,6288320\n43551,99,13821937\n79290,62,346753\n-1,-1\n-1,-1\n22031,2502243\n-1,-1\n-1,-1\n10201,2469\n6946,2492\n25238,1291\n12092,2625\n-1,-1\n-1,-1\n-1,-1\n-1,-1\n-1,-1\n-1,-1\n85971,164285\n-1,-1\n-1,-1\n-1,-1\n";
+		if ($highscoresString = fopen('http://hiscore.runescape.com/index_lite.ws?player='.$this->displayName, 'r')) {
+			return stream_get_contents($highscoresString);
+		} else {
+			return false;
+		}
 	}
 
 	/**
