@@ -1,5 +1,5 @@
 {
-    "name": "ThatChrisR/runescape-highscores",
+    "name": "that-chris-r/runescape-highscores",
     "type": "library",
     "description": "A set of classes to better manipulate the RuneScape lite highscores API",
     "keywords": ["runescape", "highscores", "api"],
