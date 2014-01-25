@@ -1,6 +1,10 @@
 {
     "name": "christopherrolfe198/runescape-highscores",
+    "type": "library",
     "description": "A set of classes to better manipulate the RuneScape lite highscores API",
+    "keywords": ["runescape", "highscores", "api"],
+    "homepage": "",
+    "license": "MIT",
     "authors": [
     {
         "name": "Christopher Rolfe",
