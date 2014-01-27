@@ -7,7 +7,19 @@ A PHP layer on top of the RuneScape Highscores.
 
 ### Installing via composer
 
+If you run this command with composer it'll require it into your project
+
 `composer require that-chris-r/runescape-highscores`
+
+Or add this to your composer.json
+
+```javascript
+{
+	"require": {
+		"that-chris-r/runescape-highscores": "1.*"
+	}
+}
+```
 
 ### Installing via git
 
