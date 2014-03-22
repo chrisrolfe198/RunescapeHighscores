@@ -46,6 +46,32 @@ class Player extends Highscores
 		}
 	}
 
+	public function getCombatLevel()
+	{
+		$attack = $this->getSkill('attack', 'level');
+		$strength = $this->getSkill('strength', 'level');
+		$magic = $this->getSkill('magic', 'level');
+		$ranged = $this->getSkill('ranged', 'level');
+
+		$highest = $attack;
+
+		if ($strength > $highest) {
+			$highest = $strength;
+		}
+
+		if ($magic > $highest) {
+			$highest = $magic;
+		}
+
+		if ($ranged > $highest) {
+			$highest = $ranged;
+		}
+
+		$defence = $this->getSkill('defence', 'level');
+
+		return $highest + $defence + 2;
+	}
+
 	/**
 	 * Helper Function
 	 * Formats the string into lower case with an uppercase letter
