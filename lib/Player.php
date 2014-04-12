@@ -23,7 +23,7 @@ class Player extends Highscores
 		return $this->displayName;
 	}
 
-	public function getSkill($skill, $typeOfStatistic)
+	public function getSkill($skill, $typeOfStatistic = 'level')
 	{
 		$skill = $this->formatHighscoreString($skill);
 
@@ -44,6 +44,31 @@ class Player extends Highscores
 		} else {
 			return false;
 		}
+	}
+	
+	public function getLegacyCombatLevel()
+	{
+		$defence = $this->getSkill('defence');
+		$constitution = $this->getSkill('constitution');
+		$prayer = $this->getSkill('prayer');
+		
+		$attack = $this->getSkill('attack');
+		$strength = $this->getSkill('strength');
+		
+		$range = $this->getSkill('ranged');
+		
+		$mage = $this->getSkill('magic');
+		
+		$base = ($defence + $constitution + floor($prayer / 2));
+		$melee = ($attack + $strength);
+		$ranged = (floor($range / 2) + $range);
+		$magic = (floor($mage / 2) + $mage);
+		
+		// calculate highest of the skills
+		
+		$cbLevel = floor($base + $highest);
+		
+		return [$cbLevel, $combatType];
 	}
 
 	public function getCombatLevel()
