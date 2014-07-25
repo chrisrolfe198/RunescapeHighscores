@@ -71,7 +71,7 @@ class Player extends Highscores
 		return [$cbLevel, $combatType];
 	}
 
-	public function getCombatLevel()
+	public function getEocOriginalCombatLevel()
 	{
 		$attack = $this->getSkill('attack', 'level');
 		$strength = $this->getSkill('strength', 'level');

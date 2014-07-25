@@ -43,5 +43,12 @@ Accessing the minigame information is very similar, however the types of informa
 
 `$player->getMinigame('Ba Attackers', 'rank')`
 
+### Combat Levels
+This library also offers the ability to calculate the combat levels based on the stats pulled in.
+
+To access the new rebalanced version of the 138 combat you can use the `getImprovedLegacyCombatLevel` method call on the player.
+
+To access the old 138 method you can use `getLegacyCombatLevel`, for the original EoC 200 method you can use `getEocOriginalCombatLevel`.
+
 ## Issues
 If you have any issues please raise them via github
