@@ -97,6 +97,29 @@ class Player extends Highscores
 		return $highest + $defence + 2;
 	}
 
+	// Adapted from http://codepad.org/jBTbpFKR
+	public function getImprovedLegacyCombatLevel()
+	{
+		$attack = $this->getSkill('attack');
+		$strength = $this->getSkill('strength');
+		$magic = $this->getSkill('magic');
+		$ranged = $this->getSkill('ranged');
+		$defence = $this->getSkill('defence');
+		$constitution = $this->getSkill('constitution');
+		$prayer = $this->getSkill('prayer');
+		$summoning = $this->getSkill('prayer');
+
+		$base = ($defence + $constitution + floor($prayer / 2) + floor($summoning / 2)) * 0.25;
+
+		$melee = ($attack + $strength) * 0.325;
+		$ranger = floor($ranged * 2) * 0.325;
+		$mage = floor($magic * 2) * 0.325;
+
+		$base = $base + max($melee, $ranger, $mage);
+
+		return floor($base);
+	}
+
 	/**
 	 * Helper Function
 	 * Formats the string into lower case with an uppercase letter
