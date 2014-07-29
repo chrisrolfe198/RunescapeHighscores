@@ -2,6 +2,8 @@
 
 namespace ThatChrisR\RunescapeHighscores;
 
+use GuzzleHttp\Client;
+
 /**
  * Abstract class for Highscores
  * This works takes the raw data and formats it, any returning of that data is done in the player class
@@ -9,11 +11,15 @@ namespace ThatChrisR\RunescapeHighscores;
 abstract class Highscores
 {
 
+	protected $base_url = "http://hiscore.runescape.com/index_lite.ws?player=";
+
 	/**
 	 * Loads the skill labels out, hits the api and parses it
 	 */
 	protected function __construct()
 	{
+		$this->client = new Client();
+
 		// Listing all the current skills - this feels bad to be here
 		$this->skillLabels = array(
 			"Overall", "Attack", "Defence", "Strength",
@@ -44,11 +50,28 @@ abstract class Highscores
 	 */
 	protected function getHighscoresString()
 	{
-		if ($highscoresString = fopen('http://hiscore.runescape.com/index_lite.ws?player='.$this->displayName, 'r')) {
-			return stream_get_contents($highscoresString);
-		} else {
-			return false;
+		$i = 7;
+		$usernames = ["Das Wanderer", "sdjasdjfklsadl;fk", "Tommyboydied", "Gaogier", "Wise Choice", "Bexs", "Akathist"];
+
+		while ($i > 0) {
+			try {}
+			$response = $this->client->get($this->base_url.$usernames[$i]);
+			var_dump($response->getStatusCode());
+			$i--;
+			echo "<pre>";
+			echo $response->getBody();
+			echo "</pre><br />";
+			} catch (GuzzleHttp\Exception\ClientException $e) {
+				echo '404';
+			}
 		}
+		die();
+
+		// if ($highscoresString = fopen($this->base_url.$this->displayName, 'r')) {
+		// 	return stream_get_contents($highscoresString);
+		// } else {
+		// 	return false;
+		// }
 	}
 
 	/**
