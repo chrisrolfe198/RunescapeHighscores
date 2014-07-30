@@ -3,6 +3,8 @@
 namespace ThatChrisR\RunescapeHighscores;
 
 use GuzzleHttp\Client;
+use GuzzleHttp\Event\CompleteEvent;
+use GuzzleHttp\Event\ErrorEvent;
 
 /**
  * Abstract class for Highscores
@@ -50,28 +52,27 @@ abstract class Highscores
 	 */
 	protected function getHighscoresString()
 	{
-		$i = 7;
-		$usernames = ["Das Wanderer", "sdjasdjfklsadl;fk", "Tommyboydied", "Gaogier", "Wise Choice", "Bexs", "Akathist"];
+		$i = 6;
+		$usernames = ["Das Wanderer", "122454352354", "Tommyboydied", "Gaogier", "Wise Choice", "Bexs", "Akathist"];
 
-		while ($i > 0) {
-			try {}
-			$response = $this->client->get($this->base_url.$usernames[$i]);
-			var_dump($response->getStatusCode());
+		$requests = [];
+
+		while ($i > -1) {
+			$url = $this->base_url.$usernames[$i];
+			$requests[] = $this->client->createRequest('GET', $url);
 			$i--;
-			echo "<pre>";
-			echo $response->getBody();
-			echo "</pre><br />";
-			} catch (GuzzleHttp\Exception\ClientException $e) {
-				echo '404';
-			}
 		}
-		die();
 
-		// if ($highscoresString = fopen($this->base_url.$this->displayName, 'r')) {
-		// 	return stream_get_contents($highscoresString);
-		// } else {
-		// 	return false;
-		// }
+		$this->client->sendAll($requests, [
+			'complete' => function(CompleteEvent $event) {
+				echo 'Completed request to ' . $event->getRequest()->getUrl() . "<br />";
+				echo 'Response ' . $event->getResponse()->getBody() . "<br /><br /><br />";
+			},
+			'error' => function(ErrorEvent $event) {
+				echo 'Failed request to ' . $event->getRequest()->getUrl() . "<br />";
+				echo '<br /><br /><br />';
+			}
+		]);
 	}
 
 	/**
