@@ -10,7 +10,7 @@ use GuzzleHttp\Event\ErrorEvent;
  * Abstract class for Highscores
  * This works takes the raw data and formats it, any returning of that data is done in the player class
  */
-abstract class Highscores
+abstract class Highscore
 {
 
 	protected $base_url = "http://hiscore.runescape.com/index_lite.ws?player=";
@@ -50,7 +50,7 @@ abstract class Highscores
 	 * Attempts to load a player from the RS API
 	 * Returns false on failing
 	 */
-	protected function getHighscoresString()
+	public function getHighscoresString()
 	{
 		$i = 6;
 		$usernames = ["Das Wanderer", "122454352354", "Tommyboydied", "Gaogier", "Wise Choice", "Bexs", "Akathist"];

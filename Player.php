@@ -4,7 +4,7 @@ namespace ThatChrisR\RunescapeHighscores;
 
 use ThatChrisR\RunescapeHighscores\Highscores;
 
-class Player extends Highscores
+class Playe extends Highscores
 {
 	protected $displayName;
 
