@@ -18,8 +18,10 @@ echo 'Foo';
 
 $c = new RunescapeHighscores();
 
-$p = $c->get_player('Das Wanderer');
+$p = $c->get_players(['Das Wanderer', 'Bexs']);
 
-$p->ba_healers;
+dd($p);
+
+$p["Das Wanderer"]->ba_healers;
 
 echo 'Foo';
