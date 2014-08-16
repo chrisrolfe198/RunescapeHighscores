@@ -20,4 +20,6 @@ $c = new RunescapeHighscores();
 
 $p = $c->get_player('Das Wanderer');
 
+$p->ba_healers;
+
 echo 'Foo';

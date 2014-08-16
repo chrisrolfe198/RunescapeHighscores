@@ -18,6 +18,8 @@ class Player implements PlayerInterface
 
 	public function __get($value)
 	{
+		$value = str_replace("_", " ", $value);
+
 		if (isset($this->attrs[$value])) return $this->attrs[$value];
 		throw new OutOfRangeException("Property doesn't exist", 1);
 		
