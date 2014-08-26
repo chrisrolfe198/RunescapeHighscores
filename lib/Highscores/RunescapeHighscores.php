@@ -11,6 +11,8 @@ class RunescapeHighscores implements HighscoresInterface
 {
 	protected $base_url = "http://hiscore.runescape.com/index_lite.ws?player=";
 	protected $client;
+	public static $players = [];
+	public static $errors = [];
 
 	public function __construct()
 	{
@@ -31,24 +33,24 @@ class RunescapeHighscores implements HighscoresInterface
 	public function get_players(array $players)
 	{
 		$requests = [];
-	
+
 		foreach ($players as $player) {
 			$url = $this->build_url($player);
 			$requests[] = $this->client->createRequest('GET', $url);
 		}
 
+		$results = \GuzzleHttp\batch($this->client, $requests);
 		$players = [];
+		$errors = [];
 
-		$this->client->sendAll($requests, [
-			'complete' => function(CompleteEvent $event) {
-				$player_name = urldecode(str_replace($this->base_url, '', $event->getRequest()->getUrl()));
+		foreach ($results as $request) {
+			$player_name = urldecode(str_replace($this->base_url, '', $request->getUrl()));
 
-				$players[$player_name] = new Player($event->getResponse()->getBody());
-			},
-			'error' => function(ErrorEvent $event) {
-				throw new NotFoundException;
-			}
-		]);
+			$result = $results[$request];
+			if (null !== $request->getBody()) $players[$player_name] = new Player($request->getBody());
+		}
+
+		return $players;
 	}
 
 	protected function build_url($player)

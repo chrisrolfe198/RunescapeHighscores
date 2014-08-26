@@ -14,14 +14,9 @@ require 'vendor/autoload.php';
 
 error_reporting(E_ALL); ini_set('display_errors', '1');
 
-echo 'Foo';
-
 $c = new RunescapeHighscores();
 
 $p = $c->get_players(['Das Wanderer', 'Bexs']);
+$sp = $c->get_player('Das Wanderer');
 
-dd($p);
-
-$p["Das Wanderer"]->ba_healers;
-
-echo 'Foo';
+var_dump($c::$players);
