@@ -22,9 +22,9 @@ class Player implements PlayerInterface
 
 		if (isset($this->attrs[$value])) return $this->attrs[$value];
 		throw new OutOfRangeException("Property doesn't exist", 1);
-		
+
 	}
-	
+
 	protected function parse_csv($csv)
 	{
 		$highscore_rows = explode("\n", $csv);

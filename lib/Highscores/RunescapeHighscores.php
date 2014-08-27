@@ -47,7 +47,7 @@ class RunescapeHighscores implements HighscoresInterface
 			$player_name = urldecode(str_replace($this->base_url, '', $request->getUrl()));
 
 			$result = $results[$request];
-			if (null !== $request->getBody()) $players[$player_name] = new Player($request->getBody());
+			if (null !== $result->getBody()) $players[$player_name] = new Player($result->getBody());
 		}
 
 		return $players;

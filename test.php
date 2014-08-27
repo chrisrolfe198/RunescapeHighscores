@@ -17,6 +17,5 @@ error_reporting(E_ALL); ini_set('display_errors', '1');
 $c = new RunescapeHighscores();
 
 $p = $c->get_players(['Das Wanderer', 'Bexs']);
-$sp = $c->get_player('Das Wanderer');
 
-var_dump($c::$players);
+var_dump($p["Das Wanderer"]->attack);
