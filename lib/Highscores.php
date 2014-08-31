@@ -75,6 +75,10 @@ abstract class Highscores
 			$skillData['level'] = $skillData['1'];
 			$skillData['xp'] = $skillData['2'];
 
+			unset($skillData['0']);
+			unset($skillData['1']);
+			unset($skillData['2']);
+
 			$this->skills[$currentSkill] = $skillData;
 		}
 
