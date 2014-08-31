@@ -35,6 +35,11 @@ class Player extends Highscores
 		}
 	}
 
+	public function getAllSkills()
+	{
+		return $this->skills;
+	}
+
 	public function getMinigame($minigame, $typeOfStatistic)
 	{
 		$minigame = $this->formatHighscoreString($minigame);
