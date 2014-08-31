@@ -112,7 +112,7 @@ class Player extends Highscores
 		$defence = $this->getSkill('defence');
 		$constitution = $this->getSkill('constitution');
 		$prayer = $this->getSkill('prayer');
-		$summoning = $this->getSkill('prayer');
+		$summoning = $this->getSkill('summoning');
 
 		$base = ($defence + $constitution + floor($prayer / 2) + floor($summoning / 2)) * 0.25;
 
