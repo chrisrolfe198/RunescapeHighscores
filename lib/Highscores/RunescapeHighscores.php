@@ -7,8 +7,7 @@ use GuzzleHttp\Client;
 
 class RunescapeHighscores implements HighscoresInterface
 {
-	// protected $base_url = "http://hiscore.runescape.com/index_lite.ws?player=";
-	protected $base_url = "http://highscores.winterfell/";
+	protected $base_url = "http://hiscore.runescape.com/index_lite.ws?player=";
 	protected $client;
 	public static $players = [];
 	public static $errors = [];
