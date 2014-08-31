@@ -28,12 +28,12 @@ class Player implements PlayerInterface
 
 	public function get_all_skills()
 	{
-		return $skill_attrs;
+		return $this->skill_attrs;
 	}
 
 	public function get_all_minigames()
 	{
-		return $minigame_attrs;
+		return $this->minigame_attrs;
 	}
 
 	protected function parse_csv($csv)
