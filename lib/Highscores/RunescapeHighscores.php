@@ -4,12 +4,11 @@ namespace ThatChrisR\RunescapeHighscores\Highscores;
 
 use ThatChrisR\RunescapeHighscores\Interfaces\HighscoresInterface;
 use GuzzleHttp\Client;
-use GuzzleHttp\Event\CompleteEvent;
-use GuzzleHttp\Event\ErrorEvent;
 
 class RunescapeHighscores implements HighscoresInterface
 {
-	protected $base_url = "http://hiscore.runescape.com/index_lite.ws?player=";
+	// protected $base_url = "http://hiscore.runescape.com/index_lite.ws?player=";
+	protected $base_url = "http://highscores.winterfell/";
 	protected $client;
 	public static $players = [];
 	public static $errors = [];
@@ -47,8 +46,17 @@ class RunescapeHighscores implements HighscoresInterface
 			$player_name = urldecode(str_replace($this->base_url, '', $request->getUrl()));
 
 			$result = $results[$request];
-			if (null !== $result->getBody()) $players[$player_name] = new Player($result->getBody());
+			if (!($result instanceof \Exception)) {
+				if ($result->getStatusCode() != 200) {
+					$errors[] = $player_name;
+					continue;
+				} elseif (null !== $result->getBody()) {
+					$players[$player_name] = new Player($result->getBody());
+				}
+			}
 		}
+
+		var_dump($players);
 
 		return $players;
 	}

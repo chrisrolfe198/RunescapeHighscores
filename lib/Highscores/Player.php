@@ -39,13 +39,14 @@ class Player implements PlayerInterface
 	protected function parse_csv($csv)
 	{
 		$highscore_rows = explode("\n", $csv);
+		$skill_count = count($this->skill_indexs);
 
 		foreach ($highscore_rows as $index => $value) {
 			if (empty($value)) continue;
 			$split_row = explode( ',', $value);
 
-			if (count($this->skill_attrs) < $index + 1) {
-				$this->minigame_attrs[$this->minigame_indexs[$index]] = new PlayerValue($split_row);
+			if ($skill_count < $index + 1) {
+				$this->minigame_attrs[$this->minigame_indexs[$index - $skill_count]] = new PlayerValue($split_row);
 			} else {
 				$this->skill_attrs[$this->skill_indexs[$index]] = new PlayerValue($split_row);
 			}
