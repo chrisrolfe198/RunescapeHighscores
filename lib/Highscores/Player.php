@@ -36,6 +36,19 @@ class Player implements PlayerInterface
 		return $this->minigame_attrs;
 	}
 
+	public function to_array()
+	{
+		$array = [];
+
+		$skills_and_minigames = array_merge($this->skill_attrs, $this->minigame_attrs);
+
+		foreach ($skills_and_minigames as $key => $value) {
+			$skills_and_minigames[$key] = $value->to_array();
+		}
+
+		return $skills_and_minigames;
+	}
+
 	protected function parse_csv($csv)
 	{
 		$highscore_rows = explode("\n", $csv);

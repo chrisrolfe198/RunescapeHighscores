@@ -23,4 +23,17 @@ class PlayerValue implements PlayerValueInterface
 		if (isset($this->xp)) return $this->level;
 		return $this->rank;
 	}
+
+	public function to_array()
+	{
+		$array = [
+			"rank" => $this->rank
+		];
+
+		if (isset($this->level)) $array["level"] = $this->level;
+		if (isset($this->xp)) $array["xp"] = $this->xp;
+		if (isset($this->score)) $array["score"] = $this->score;
+
+		return $array;
+	}
 }
