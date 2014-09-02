@@ -38,8 +38,6 @@ class Player implements PlayerInterface
 
 	public function to_array()
 	{
-		$array = [];
-
 		$skills_and_minigames = array_merge($this->skill_attrs, $this->minigame_attrs);
 
 		foreach ($skills_and_minigames as $key => $value) {
@@ -47,6 +45,55 @@ class Player implements PlayerInterface
 		}
 
 		return $skills_and_minigames;
+	}
+
+	public function get_legacy_combat_level()
+	{
+		$defence = $this->defence->level;
+		$constitution = $this->constitution->level;
+		$prayer = $this->prayer->level;
+
+		$attack = $this->attack->level;
+		$strength = $this->strength->level;
+
+		$range = $this->ranged->level;
+
+		$mage = $this->magic->level;
+
+		$base = ($defence + $constitution + floor($prayer / 2)) * 0.25;
+		$melee = ($attack + $strength) * 0.325;
+		$ranged = (floor($range / 2) + $range) * 0.325;
+		$magic = (floor($mage / 2) + $mage) * 0.325;
+
+		// calculate highest of the skills
+		$highest = max($melee, $ranged, $magic);
+
+		$cbLevel = floor($base + $highest);
+
+		return $cbLevel;
+	}
+
+	// Adapted from http://codepad.org/jBTbpFKR
+	public function get_combat_level()
+	{
+		$attack = $this->attack->level;
+		$strength = $this->strength->level;
+		$magic = $this->magic->level;
+		$ranged = $this->ranged->level;
+		$defence = $this->defence->level;
+		$constitution = $this->constitution->level;
+		$prayer = $this->prayer->level;
+		$summoning = $this->summoning->level;
+
+		$base = ($defence + $constitution + floor($prayer / 2) + floor($summoning / 2)) * 0.25;
+
+		$melee = ($attack + $strength) * 0.325;
+		$ranger = floor($ranged * 2) * 0.325;
+		$mage = floor($magic * 2) * 0.325;
+
+		$base = $base + max($melee, $ranger, $mage);
+
+		return floor($base);
 	}
 
 	protected function parse_csv($csv)
