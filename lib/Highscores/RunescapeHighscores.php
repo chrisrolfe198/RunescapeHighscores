@@ -55,8 +55,6 @@ class RunescapeHighscores implements HighscoresInterface
 			}
 		}
 
-		var_dump($players);
-
 		return $players;
 	}
 
