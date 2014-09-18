@@ -37,6 +37,8 @@ This will return an indexed array with the indexes being the RuneScape usernames
 
 ## Using a player object
 
+### Properties
+
 Player objects use magic methods to access the properties for a player.
 
 Each attribute holds its values in a `PlayerValue` class, when treated like a string it will return the level for skills and rank for anything else.
@@ -60,6 +62,14 @@ For minigames it holds:
 * Score
 
 Minigames are access as they are named in the api documentation and spaces are replaced with underscores, so to access the information for a player on Dominion Tower you use `$player->dominion_tower->rank`.
+
+### Combat levels
+
+You can access both the standard combat level and the legacy combat level on a player object with the following methods, `get_legacy_combat_level` and `get_combat_level`.
+
+### Converting to Array
+
+You can convert the player object to an array if you need to by calling the `to_array` method.
 
 ## Issues
 If you have any issues please raise them via github
