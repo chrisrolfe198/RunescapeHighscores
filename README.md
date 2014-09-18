@@ -16,7 +16,7 @@ Or add this to your composer.json
 ```javascript
 {
 	"require": {
-		"that-chris-r/runescape-highscores": "1.*"
+		"that-chris-r/runescape-highscores": "2.*"
 	}
 }
 ```
@@ -25,23 +25,51 @@ Or add this to your composer.json
 
 Alternatively you can clone this repository and use the files in lib.
 
-## Using the classes
+## Retrieving a player
 
-You'll need to reference the namespace at the head of the file like so:
-`use ThatChrisR\RunescapeHighscores\Player;`
+In order to access a player you need to create a new highscores object and use that to query the RuneScape API, `$client = new RunescapeHighscores();`.
 
-Once that's done you can then create a new player like so:
-`$player = new Player('Das Wanderer');`
+Once you have a client you can retrieve a single player using the `get_player` method, `$player = $client->get_player('Das Wanderer');`.
 
-The RS API offers you access to rank, level and experience for skill levels.
+You can also retrive multiple players at one time using the `get_players` method, `$players = $client->get_players(["Das Wanderer", "Bexs"]);`.
 
-You can access the skills by calling the getSkill method like so:
-`$player->getSkill('dungeoneering', 'level');`
-The first parameter being the skill you are trying to retrieve, the second the type of information you want.
+This will return an indexed array with the indexes being the RuneScape usernames, E.G. `$players["Das Wanderer"]` will give you access to a player object.
 
-Accessing the minigame information is very similar, however the types of information are either rank or score.
+## Using a player object
 
-`$player->getMinigame('Ba Attackers', 'rank')`
+### Properties
+
+Player objects use magic methods to access the properties for a player.
+
+Each attribute holds its values in a `PlayerValue` class, when treated like a string it will return the level for skills and rank for anything else.
+
+So to access a players attack level you do:
+
+```
+// Short syntax
+echo $player->attack;
+// Longer syntax
+echo $player->attack->level;
+```
+
+Each `PlayerValue` object holds other values, for skills it holds
+* Rank
+* Xp
+* Level
+
+For minigames it holds:
+* Rank
+* Score
+
+Minigames are access as they are named in the api documentation and spaces are replaced with underscores, so to access the information for a player on Dominion Tower you use `$player->dominion_tower->rank`.
+
+### Combat levels
+
+You can access both the standard combat level and the legacy combat level on a player object with the following methods, `get_legacy_combat_level` and `get_combat_level`.
+
+### Converting to Array
+
+You can convert the player object to an array if you need to by calling the `to_array` method.
 
 ### Combat Levels
 This library also offers the ability to calculate the combat levels based on the stats pulled in.

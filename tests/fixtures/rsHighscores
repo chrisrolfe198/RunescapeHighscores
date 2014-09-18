@@ -18,3 +18,160 @@
             Connection: Close
             Content-length: '626'
         body: "40158,2400,217195145\n99277,97,10784313\n92935,98,12086378\n114188,97,11154627\n88425,99,14639079\n112322,90,5559045\n68455,95,9490210\n116703,96,10009458\n108288,97,11326972\n91026,97,11283768\n84534,97,10728241\n68926,93,7693481\n86582,97,11321847\n59558,89,4849832\n69041,86,3831864\n36209,97,10881162\n75248,93,7570825\n45786,89,5072388\n55220,86,3948339\n35162,99,13038727\n53607,88,4583904\n48002,92,7139246\n57583,85,3520602\n39893,91,6223827\n61853,91,6288320\n43551,99,13821937\n79290,62,346753\n-1,-1\n-1,-1\n22031,2502243\n-1,-1\n-1,-1\n10201,2469\n6946,2492\n25238,1291\n12092,2625\n-1,-1\n-1,-1\n-1,-1\n-1,-1\n-1,-1\n-1,-1\n85971,164285\n-1,-1\n-1,-1\n-1,-1\n"
+-
+    request:
+        method: GET
+        url: 'http://hiscore.runescape.com/index_lite.ws?player=Das%20Wanderer'
+        headers:
+            Host: hiscore.runescape.com
+            Content-Length: '0'
+    response:
+        status: 200
+        headers:
+            Date: 'Tue, 29-Jul-2014 12:29:58 GMT'
+            Server: JAGeX/3.1
+            Content-type: 'text/html; charset=ISO-8859-1'
+            Cache-control: no-cache
+            Pragma: no-cache
+            Expires: 'Thu, 01-Jan-1970 00:00:00 GMT'
+            Connection: Close
+            Content-length: '656'
+        body: "45135,2455,249772055\n171495,97,11345635\n134737,99,13166338\n204033,99,13035510\n125758,99,16815905\n167342,94,8426373\n97707,96,9920318\n199777,97,11133460\n195318,98,11902361\n163851,98,12108952\n149105,97,10894317\n115508,94,8314668\n149210,98,12038988\n79867,90,5439108\n76576,90,5834866\n53544,97,11443841\n112735,94,7952843\n64700,90,5578546\n81067,88,4482761\n32592,99,14258832\n66331,90,5842351\n66988,94,8415292\n82346,87,4272839\n52610,92,7116484\n71575,96,10192148\n52365,101,17514171\n62340,81,2325148\n-1,-1\n-1,-1\n30573,2502243\n-1,-1\n-1,-1\n16739,2469\n11240,2492\n43295,1291\n21227,2625\n-1,-1\n-1,-1\n-1,-1\n-1,-1\n-1,-1\n-1,-1\n91590,164285\n-1,-1\n-1,-1\n-1,-1\n-1,-1\n-1,-1\n-1,-1\n"
+-
+    request:
+        method: GET
+        url: 'http://hiscore.runescape.com/index_lite.ws?player=Akathist'
+        headers:
+            Host: hiscore.runescape.com
+            User-Agent: 'Guzzle/4.1.8 curl/7.37.1 PHP/5.5.15'
+            Content-Length: '0'
+    response:
+        status: 200
+        headers:
+            Date: 'Fri, 15-Aug-2014 19:39:43 GMT'
+            Server: JAGeX/3.1
+            Content-type: 'text/html; charset=ISO-8859-1'
+            Cache-control: no-cache
+            Pragma: no-cache
+            Expires: 'Thu, 01-Jan-1970 00:00:00 GMT'
+            Connection: Close
+            Content-length: '640'
+        body: "11301,2595,536554316\n90013,99,15324277\n25204,99,25004251\n103130,99,15497335\n83058,99,22403163\n68254,99,15861381\n27051,99,14091381\n30493,99,22610475\n8330,99,24628649\n24587,99,17608919\n26077,99,14651226\n29023,99,16010314\n17255,99,17587321\n13674,99,15550830\n36667,99,13407787\n23897,99,14496244\n21582,99,15158662\n12655,99,14844689\n29495,99,13666503\n6459,99,25240125\n12642,99,17005057\n9639,99,16886090\n9462,99,17507633\n23604,99,14267984\n14010,99,14573126\n15349,120,104648310\n3161,99,18022584\n-1,-1\n-1,-1\n9972,4421783\n-1,-1\n-1,-1\n-1,-1\n-1,-1\n-1,-1\n126904,896\n-1,-1\n-1,-1\n-1,-1\n-1,-1\n-1,-1\n-1,-1\n4387,1496715\n-1,-1\n-1,-1\n-1,-1\n-1,-1\n-1,-1\n91592,6\n"
+-
+    request:
+        method: GET
+        url: 'http://hiscore.runescape.com/index_lite.ws?player=Bexs'
+        headers:
+            Host: hiscore.runescape.com
+            User-Agent: 'Guzzle/4.1.8 curl/7.37.1 PHP/5.5.15'
+            Content-Length: '0'
+    response:
+        status: 200
+        headers:
+            Date: 'Fri, 15-Aug-2014 19:39:43 GMT'
+            Server: JAGeX/3.1
+            Content-type: 'text/html; charset=ISO-8859-1'
+            Cache-control: no-cache
+            Pragma: no-cache
+            Expires: 'Thu, 01-Jan-1970 00:00:00 GMT'
+            Connection: Close
+            Content-length: '643'
+        body: "42035,2474,278417475\n103402,99,14466620\n47121,99,19117140\n117849,99,14687332\n83120,99,22392022\n95120,99,14175066\n20364,99,14460393\n112415,99,13960277\n239193,91,6062417\n240536,91,5903529\n24158,99,14785857\n131824,93,7195863\n164467,95,9078839\n56761,96,9693006\n60669,94,8447889\n78295,91,6402074\n32415,99,14178986\n56970,92,6874506\n76766,90,5507184\n51044,99,13209911\n69383,90,5619711\n93960,90,5445866\n68195,91,6181176\n65087,90,5431588\n39798,99,13341734\n57553,101,16322350\n39451,90,5476139\n-1,-1\n-1,-1\n91060,261943\n-1,-1\n-1,-1\n-1,-1\n-1,-1\n-1,-1\n-1,-1\n-1,-1\n-1,-1\n-1,-1\n-1,-1\n38382,351\n130046,544\n85968,221590\n-1,-1\n54198,2\n-1,-1\n-1,-1\n-1,-1\n53475,25\n"
+-
+    request:
+        method: GET
+        url: 'http://hiscore.runescape.com/index_lite.ws?player=Wise%20Choice'
+        headers:
+            Host: hiscore.runescape.com
+            User-Agent: 'Guzzle/4.1.8 curl/7.37.1 PHP/5.5.15'
+            Content-Length: '0'
+    response:
+        status: 200
+        headers:
+            Date: 'Fri, 15-Aug-2014 19:39:44 GMT'
+            Server: JAGeX/3.1
+            Content-type: 'text/html; charset=ISO-8859-1'
+            Cache-control: no-cache
+            Pragma: no-cache
+            Expires: 'Thu, 01-Jan-1970 00:00:00 GMT'
+            Connection: Close
+            Content-length: '658'
+        body: "13408,2591,575724678\n53986,99,19619453\n9013,99,38983201\n43278,99,23930513\n12622,99,50158404\n15852,99,27819833\n25574,99,14161647\n4621,99,50415136\n56114,99,14569382\n32959,99,16412326\n51693,99,13705257\n71335,99,13367590\n6588,99,25285227\n24157,99,14241309\n28748,99,13772267\n28000,99,14098113\n11287,99,17486239\n23001,99,13725460\n42851,99,13208864\n8151,99,22982238\n38188,99,13338281\n33430,99,13554285\n30137,99,13715004\n21066,99,14644348\n25502,99,13707743\n18626,116,74651280\n10443,99,14171278\n-1,-1\n-1,-1\n76404,536482\n-1,-1\n-1,-1\n87989,998\n-1,-1\n146016,594\n60253,1736\n-1,-1\n-1,-1\n-1,-1\n-1,-1\n22727,462\n48343,591\n-1,-1\n1510,1475871\n-1,-1\n4585,68\n-1,-1\n-1,-1\n8726,94\n"
+-
+    request:
+        method: GET
+        url: 'http://hiscore.runescape.com/index_lite.ws?player=Gaogier'
+        headers:
+            Host: hiscore.runescape.com
+            User-Agent: 'Guzzle/4.1.8 curl/7.37.1 PHP/5.5.15'
+            Content-Length: '0'
+    response:
+        status: 200
+        headers:
+            Date: 'Fri, 15-Aug-2014 19:39:44 GMT'
+            Server: JAGeX/3.1
+            Content-type: 'text/html; charset=ISO-8859-1'
+            Cache-control: no-cache
+            Pragma: no-cache
+            Expires: 'Thu, 01-Jan-1970 00:00:00 GMT'
+            Connection: Close
+            Content-length: '594'
+        body: "410703,1667,32486044\n315675,85,3498663\n469324,77,1489151\n616782,76,1404507\n584039,78,1660630\n759341,60,297660\n472179,60,300489\n698563,67,586318\n92732,99,13700593\n431075,82,2427931\n588238,64,420316\n369858,77,1493202\n378422,76,1401300\n425774,63,372834\n361679,68,631899\n415913,69,702038\n401595,56,197162\n453251,57,205459\n430950,56,200720\n520588,54,165286\n371876,53,141080\n413374,59,252455\n472373,54,165717\n390543,56,186418\n394280,58,236570\n346797,62,347583\n-1,1,-1\n-1,-1\n-1,-1\n-1,-1\n-1,-1\n-1,-1\n-1,-1\n-1,-1\n-1,-1\n-1,-1\n-1,-1\n-1,-1\n-1,-1\n-1,-1\n-1,-1\n-1,-1\n-1,-1\n-1,-1\n-1,-1\n-1,-1\n-1,-1\n-1,-1\n-1,-1\n"
+-
+    request:
+        method: GET
+        url: 'http://hiscore.runescape.com/index_lite.ws?player=Tommyboydied'
+        headers:
+            Host: hiscore.runescape.com
+            User-Agent: 'Guzzle/4.1.8 curl/7.37.1 PHP/5.5.15'
+            Content-Length: '0'
+    response:
+        status: 200
+        headers:
+            Date: 'Fri, 15-Aug-2014 19:39:45 GMT'
+            Server: JAGeX/3.1
+            Content-type: 'text/html; charset=ISO-8859-1'
+            Cache-control: no-cache
+            Pragma: no-cache
+            Expires: 'Thu, 01-Jan-1970 00:00:00 GMT'
+            Connection: Close
+            Content-length: '638'
+        body: "67094,2373,288175134\n29619,99,25620797\n25317,99,24955314\n36534,99,26122497\n26622,99,38041685\n36622,99,20137179\n94187,97,10908622\n57445,99,17395268\n212952,95,8934182\n249454,90,5581797\n76431,99,13353489\n342831,78,1704834\n220090,88,4487544\n79557,90,5569487\n125942,83,2770972\n147295,84,3056588\n42938,99,13687694\n93392,84,2963669\n95909,85,3260113\n14297,99,18680407\n124899,80,2020836\n115963,85,3292721\n87763,87,4013948\n116027,80,2100638\n29501,99,13574692\n66406,100,14395900\n83937,77,1544261\n-1,-1\n-1,-1\n30376,2564628\n-1,-1\n-1,-1\n-1,-1\n-1,-1\n-1,-1\n-1,-1\n-1,-1\n-1,-1\n-1,-1\n-1,-1\n-1,-1\n52526,566\n-1,-1\n20082,450169\n-1,-1\n8573,31\n-1,-1\n-1,-1\n-1,-1\n"
+-
+    request:
+        method: GET
+        url: 'http://hiscore.runescape.com/index_lite.ws?player=122454352354'
+        headers:
+            Host: hiscore.runescape.com
+            User-Agent: 'Guzzle/4.1.8 curl/7.37.1 PHP/5.5.15'
+            Content-Length: '0'
+    response:
+        status: 404
+        headers:
+            Content-type: text/html
+            Cache-control: no-cache
+            Pragma: no-cache
+            Expires: '0'
+            Connection: Close
+            Content-length: '549'
+        body: "<html><head><title>404 - Page not found</title></head><body style=\"color: black; background: white; font-family: Arial, Verdana, Helvetica;\"><div style=\"font-weight: bold; color: #666666; font-size: large\">404 - Page not found</div><hr width=\"300\" align=\"left\" /><p>Sorry, the page you were looking for was not found.</p><!--Padding for IEPadding Padding for IEPadding Padding for IEPadding Padding for IEPadding for IEPadding for IEPadding for IEPadding for IEPadding for IEPadding for IEPadding for IEPadding for IEPadding for IE--></body></html>\n"
+-
+    request:
+        method: GET
+        url: 'http://hiscore.runescape.com/index_lite.ws?player=Das%20Wanderer'
+        headers:
+            Host: hiscore.runescape.com
+            User-Agent: 'Guzzle/4.1.8 curl/7.37.1 PHP/5.5.15'
+            Content-Length: '0'
+    response:
+        status: 200
+        headers:
+            Date: 'Fri, 15-Aug-2014 19:39:47 GMT'
+            Server: JAGeX/3.1
+            Content-type: 'text/html; charset=ISO-8859-1'
+            Cache-control: no-cache
+            Pragma: no-cache
+            Expires: 'Thu, 01-Jan-1970 00:00:00 GMT'
+            Connection: Close
+            Content-length: '657'
+        body: "45777,2458,252415878\n176433,97,11579563\n138678,99,13166338\n211327,99,13035510\n129715,99,16869812\n174138,94,8442703\n100914,96,9924371\n206136,97,11194626\n199823,98,12528896\n168589,98,12226320\n153578,97,10961097\n118961,94,8335948\n153326,98,12131403\n80641,90,5511000\n78119,90,5870499\n54882,97,11499568\n116123,94,7953270\n65919,90,5619525\n82364,88,4601719\n32992,99,14359399\n67869,90,5859160\n68078,94,8550409\n82001,88,4557040\n54039,92,7138127\n73190,96,10296759\n53619,102,17549392\n59158,82,2653424\n-1,-1\n-1,-1\n31244,2505378\n-1,-1\n-1,-1\n17146,2469\n11530,2492\n44546,1291\n21836,2625\n-1,-1\n-1,-1\n-1,-1\n-1,-1\n-1,-1\n-1,-1\n91946,164285\n-1,-1\n-1,-1\n-1,-1\n-1,-1\n-1,-1\n-1,-1\n"

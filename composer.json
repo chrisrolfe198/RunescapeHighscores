@@ -2,18 +2,23 @@
     "name": "that-chris-r/runescape-highscores",
     "type": "library",
     "description": "A set of classes to better manipulate the RuneScape lite highscores API",
-    "keywords": ["runescape", "highscores", "api"],
-    "homepage": "",
+    "keywords": [
+        "runescape",
+        "highscores",
+        "api"
+    ],
     "license": "MIT",
     "authors": [
-    {
-        "name": "Christopher Rolfe",
-        "email": "christopher.rolfe198@gmail.com"
-    }
+        {
+            "name": "Christopher Rolfe",
+            "email": "christopher.rolfe198@gmail.com"
+        }
     ],
+    "require": {
+        "guzzlehttp/guzzle": "~4.0"
+    },
     "require-dev": {
         "phpunit/phpunit": "3.7.5",
-        "guzzle/guzzle": "~3.7",
         "php-vcr/php-vcr": "dev-master"
     },
     "autoload": {
