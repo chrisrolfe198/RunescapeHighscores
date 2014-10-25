@@ -1,5 +1,6 @@
 RunescapeHighscores
 ===================
+[![Latest Stable Version](https://poser.pugx.org/that-chris-r/runescape-highscores/v/stable.svg)](https://packagist.org/packages/that-chris-r/runescape-highscores) [![Total Downloads](https://poser.pugx.org/that-chris-r/runescape-highscores/downloads.svg)](https://packagist.org/packages/that-chris-r/runescape-highscores) [![Latest Unstable Version](https://poser.pugx.org/that-chris-r/runescape-highscores/v/unstable.svg)](https://packagist.org/packages/that-chris-r/runescape-highscores) [![License](https://poser.pugx.org/that-chris-r/runescape-highscores/license.svg)](https://packagist.org/packages/that-chris-r/runescape-highscores)
 
 A PHP layer on top of the RuneScape Highscores.
 
