@@ -10,7 +10,7 @@ class RunescapeHighscores implements HighscoresInterface
 	protected $base_url = "http://hiscore.runescape.com/index_lite.ws?player=";
 	protected $client;
 	public static $players = [];
-	public static $errors = [];
+	protected $errors = [];
 
 	public function __construct()
 	{
@@ -47,7 +47,7 @@ class RunescapeHighscores implements HighscoresInterface
 			$result = $results[$request];
 			if (!($result instanceof \Exception)) {
 				if ($result->getStatusCode() != 200) {
-					$errors[] = $player_name;
+					$errors[$player_name] = $result;
 					continue;
 				} elseif (null !== $result->getBody()) {
 					$players[$player_name] = new Player($result->getBody());
@@ -55,7 +55,14 @@ class RunescapeHighscores implements HighscoresInterface
 			}
 		}
 
+		$this->errors = $errors;
+
 		return $players;
+	}
+
+	public function get_errors()
+	{
+		return $this->errors;
 	}
 
 	protected function build_url($player)
