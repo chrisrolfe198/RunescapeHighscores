@@ -8,7 +8,7 @@ use \OutOfRangeException;
 class Player implements PlayerInterface
 {
 	protected $skill_attrs = [];
-	protected $skill_indexs = ["overall", "attack", "defence", "strength", "constitution", "ranged", "prayer", "magic", "cooking", "woodcutting", "fletching", "fishing", "firemaking", "crafting", "smithing", "mining", "herblore", "agility", "thieving", "slayer", "farming", "runecrafting", "hunter", "construction", "summoning", "dungeoneering", "divination"];
+	protected $skill_indexs = ["overall", "attack", "defence", "strength", "constitution", "ranged", "prayer", "magic", "cooking", "woodcutting", "fletching", "fishing", "firemaking", "crafting", "smithing", "mining", "herblore", "agility", "thieving", "slayer", "farming", "runecrafting", "hunter", "construction", "summoning","dungeoneering", "divination", "invention"];
 	protected $minigame_attrs = [];
 	protected $minigame_indexs = ["bounty hunters", "bounty hunters rogues", "dominion tower", "the crucible", "castle wars", "ba attackers", "ba defenders", "ba collectors", "ba healers", "duel tournament", "mobilising armies", "conquest", "fist of guthix", "resource race", "athletics", "we2 armadyl contribution", "we2 bandos contribution", "we2 armadyl pvp kills", "we2 bandos pvp kills", "heist guard level", "heist robber level", "cfp average", "cow tipping", "rats killed after april fools 2015"];
 
