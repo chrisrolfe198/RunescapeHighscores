@@ -4,6 +4,7 @@ namespace ThatChrisR\RunescapeHighscores\Highscores;
 
 use ThatChrisR\RunescapeHighscores\Interfaces\HighscoresInterface;
 use GuzzleHttp\Client;
+use GuzzleHttp\Promise;
 
 class RunescapeHighscores implements HighscoresInterface
 {
@@ -34,24 +35,26 @@ class RunescapeHighscores implements HighscoresInterface
 
 		foreach ($players as $player) {
 			$url = $this->build_url($player);
-			$requests[] = $this->client->createRequest('GET', $url);
+			$requests[$player] = $this->client->getAsync($url);
 		}
 
-		$results = \GuzzleHttp\batch($this->client, $requests);
+		$results = Promise\settle($requests)->wait();
+
 		$players = [];
 		$errors = [];
 
-		foreach ($results as $request) {
-			$player_name = urldecode(str_replace($this->base_url, '', $request->getUrl()));
+		// var_dump($results); exit;
 
-			$result = $results[$request];
-			if (!($result instanceof \Exception)) {
-				if ($result->getStatusCode() != 200) {
-					$errors[$player_name] = $result;
-					continue;
-				} elseif (null !== $result->getBody()) {
+		foreach ($results as $player_name => $request) {
+			if (isset($request['value'])) {
+				$result = $request['value'];
+
+				if (null !== $result->getBody()) {
 					$players[$player_name] = new Player($result->getBody());
 				}
+			} else if ($request['reason']) {
+				$code = $request['reason']->getCode();
+				$errors[$player_name] = $code;
 			}
 		}
 
