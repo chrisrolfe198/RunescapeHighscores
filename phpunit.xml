@@ -1,3 +1,15 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<phpunit bootstrap="vendor/autoload.php" colors="true">
+<phpunit
+    colors="true"
+    bootstrap="vendor/autoload.php">
+    <testsuites>
+        <testsuite name="highscores">
+            <directory>tests</directory>
+        </testsuite>
+    </testsuites>
+
+    <filter>
+        <whitelist processUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">lib/</directory>
+        </whitelist>
+    </filter>
 </phpunit>

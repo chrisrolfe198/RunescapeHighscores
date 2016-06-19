@@ -23,14 +23,14 @@ class PlayerTest extends PHPUnit_Framework_TestCase
 		$this->player = $this->highscores->get_player($this->display_name);
 
 		$this->assertEquals(99, $this->player->defence->level);
-		$this->assertEquals(138731, $this->player->defence->rank);
+		$this->assertEquals(102836, $this->player->defence->rank);
 	}
 
 	public function test_we_can_get_a_players_ba_rank_and_score()
 	{
 		$this->player = $this->highscores->get_player($this->display_name);
 
-		$this->assertEquals(21849, $this->player->ba_healers->rank);
+		$this->assertEquals(19105, $this->player->ba_healers->rank);
 		$this->assertEquals(2625, $this->player->ba_healers->score);
 	}
 }
