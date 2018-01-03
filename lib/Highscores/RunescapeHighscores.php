@@ -8,7 +8,7 @@ use GuzzleHttp\Promise;
 
 class RunescapeHighscores implements HighscoresInterface
 {
-	protected $base_url = "http://hiscore.runescape.com/index_lite.ws?player=";
+	protected $base_url = "http://services.runescape.com/m=hiscore/index_lite.ws?player=";
 	protected $client;
 	public static $players = [];
 	protected $errors = [];
