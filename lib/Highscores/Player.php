@@ -100,14 +100,15 @@ class Player implements PlayerInterface
 	{
 		$highscore_rows = explode("\n", $csv);
 		$skill_count = count($this->skill_indexs);
+		$minigame_count = count($this->minigame_indexs);
 
 		foreach ($highscore_rows as $index => $value) {
 			if (empty($value)) continue;
 			$split_row = explode( ',', $value);
 
-			if ($skill_count < $index + 1) {
+			if ($skill_count < $index + 1 and $index + 1 < $minigame_count) {
 				$this->minigame_attrs[$this->minigame_indexs[$index - $skill_count]] = new PlayerValue($split_row);
-			} else {
+			} else if ($skill_count > $index) {
 				$this->skill_attrs[$this->skill_indexs[$index]] = new PlayerValue($split_row);
 			}
 		}
