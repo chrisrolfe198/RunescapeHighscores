@@ -49,7 +49,7 @@ class RunescapeHighscores implements HighscoresInterface
 			if (isset($request['value'])) {
 				$result = $request['value'];
 
-				if (null !== $result->getBody()) {
+				if (null !== $result->getBody() and strpos($result->getBody(), '<!DOCTYPE html>') === false) {
 					$players[$player_name] = new Player($result->getBody());
 				}
 			} else if ($request['reason']) {
