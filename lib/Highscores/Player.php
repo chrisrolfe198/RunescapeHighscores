@@ -8,9 +8,9 @@ use \OutOfRangeException;
 class Player implements PlayerInterface
 {
 	protected $skill_attrs = [];
-	protected $skill_indexs = ["overall", "attack", "defence", "strength", "constitution", "ranged", "prayer", "magic", "cooking", "woodcutting", "fletching", "fishing", "firemaking", "crafting", "smithing", "mining", "herblore", "agility", "thieving", "slayer", "farming", "runecrafting", "hunter", "construction", "summoning","dungeoneering", "divination", "invention", "archaeology"];
+	protected $skill_indexs = ["overall", "attack", "defence", "strength", "constitution", "ranged", "prayer", "magic", "cooking", "woodcutting", "fletching", "fishing", "firemaking", "crafting", "smithing", "mining", "herblore", "agility", "thieving", "slayer", "farming", "runecrafting", "hunter", "construction", "summoning", "dungeoneering", "divination", "invention", "archaeology", "necromancy"];
 	protected $minigame_attrs = [];
-	protected $minigame_indexs = ["bounty hunters", "bounty hunters rogues", "dominion tower", "the crucible", "castle wars", "ba attackers", "ba defenders", "ba collectors", "ba healers", "duel tournament", "mobilising armies", "conquest", "fist of guthix", "resource race", "athletics", "we2 armadyl contribution", "we2 bandos contribution", "we2 armadyl pvp kills", "we2 bandos pvp kills", "heist guard level", "heist robber level", "cfp average", "cow tipping", "rats killed after april fools 2015"];
+	protected $minigame_indexs = ["bounty hunters", "bounty hunters rogues", "dominion tower", "the crucible", "castle wars", "ba attackers", "ba defenders", "ba collectors", "ba healers", "duel tournament", "mobilising armies", "conquest", "fist of guthix", "resource race", "athletics", "we2 armadyl contribution", "we2 bandos contribution", "we2 armadyl pvp kills", "we2 bandos pvp kills", "heist guard level", "heist robber level", "cfp average", "cow tipping", "rats killed after april fools 2015", "runescore", "Clue Scrolls Easy", "Clue Scrolls Medium", "Clue Scrolls Hard", "Clue Scrolls Elite", "Clue Scrolls Master"];
 
 	public function __construct($csv)
 	{
@@ -21,8 +21,10 @@ class Player implements PlayerInterface
 	{
 		$value = str_replace("_", " ", $value);
 
-		if (isset($this->skill_attrs[$value])) return $this->skill_attrs[$value];
-		if (isset($this->minigame_attrs[$value])) return $this->minigame_attrs[$value];
+		if (isset($this->skill_attrs[$value]))
+			return $this->skill_attrs[$value];
+		if (isset($this->minigame_attrs[$value]))
+			return $this->minigame_attrs[$value];
 		throw new OutOfRangeException("Property doesn't exist", 1);
 	}
 
@@ -103,8 +105,9 @@ class Player implements PlayerInterface
 		$minigame_count = count($this->minigame_indexs);
 
 		foreach ($highscore_rows as $index => $value) {
-			if (empty($value)) continue;
-			$split_row = explode( ',', $value);
+			if (empty($value))
+				continue;
+			$split_row = explode(',', $value);
 
 			if ($skill_count < $index + 1 and $index + 1 < $minigame_count) {
 				$this->minigame_attrs[$this->minigame_indexs[$index - $skill_count]] = new PlayerValue($split_row);
