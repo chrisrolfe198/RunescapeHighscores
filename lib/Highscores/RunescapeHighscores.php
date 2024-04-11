@@ -4,7 +4,7 @@ namespace ThatChrisR\RunescapeHighscores\Highscores;
 
 use ThatChrisR\RunescapeHighscores\Interfaces\HighscoresInterface;
 use GuzzleHttp\Client;
-use GuzzleHttp\Promise;
+use GuzzleHttp\Promise\Utils;
 
 class RunescapeHighscores implements HighscoresInterface
 {
@@ -38,7 +38,7 @@ class RunescapeHighscores implements HighscoresInterface
 			$requests[$player] = $this->client->getAsync($url);
 		}
 
-		$results = Promise\settle($requests)->wait();
+		$results = Utils::settle($requests)->wait();
 
 		$players = [];
 		$errors = [];
